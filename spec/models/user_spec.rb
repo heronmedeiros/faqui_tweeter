@@ -10,7 +10,6 @@ RSpec.describe User, type: :model do
     it { should validate_length_of(:email).is_at_most(255) }
     it { should validate_uniqueness_of(:email).on(:create) }
     it { should validate_uniqueness_of(:name) }
-    it { should have_secure_password }
 
     context "when fields are empty" do
       let (:user) { User.new }
@@ -26,9 +25,9 @@ RSpec.describe User, type: :model do
 
     context "when fiels are not empty" do
       let (:user) { User.new(
-                            name: "John Lee",
-                            email: "johnlee@email.com")
-                        }
+                      name: "John Lee",
+                      email: "johnlee@email.com")
+                  }
 
       it "should save" do
         expect(user.save).to be_truthy
