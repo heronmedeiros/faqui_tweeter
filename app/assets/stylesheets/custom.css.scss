@@ -14,9 +14,15 @@ div {
   top: -10px;
 }
 
-.new_tweet_img {
+.new_tweet_img, .login {
   float: right;;
   top: 5px;
+}
+
+.login {
+  position: relative;
+  top: 12px;
+  font-size: 1.0em;
 }
 
 .navbar-header .navbar-brand {
@@ -30,7 +36,7 @@ div {
 
 @media screen and (min-width: 900px) {
   .container {
-    width: 870px;
+    width: 370px;
   }
 }
 

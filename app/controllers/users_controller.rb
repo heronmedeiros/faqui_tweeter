@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user,      only: [:show, :edit, :update, :destroy]
 
   def index
     redirect_to :root
   end
 
   def show
+    redirect_to :root
   end
 
   def new
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        log_in @user
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -52,8 +54,14 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      if logged_in?
+        @user = User.find(current_user.id)
+      else
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params

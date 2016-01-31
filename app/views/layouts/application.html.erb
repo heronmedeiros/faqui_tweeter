@@ -17,16 +17,24 @@
           </span>
         </a>
       </div>
-      <div class="new_tweet">
-        <%= link_to image_tag("new_tweet.png", class: "new_tweet_img"), new_tweet_path %>
-      </div>
+      <% if logged_in? %>
+        <div class="new_tweet">
+          <%= link_to image_tag("new_tweet.png", class: "new_tweet_img"), new_tweet_path %>
+        </div>
+        <div><%= link_to "Log out", logout_path, method: "delete", class: "login" %></div>
+      <% else %>
+          <div><%= link_to "Log in", login_path, class: "login" %></div>
+      <% end %>
     </div>
   </nav>
 
   <div id="main-container" class="container">
-    <div class="header clearfix">
+    <!-- <div class="header clearfix"> -->
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+    <% end -%>
       <%= yield %>
-    </div>
+    <!-- </div> -->
   </div>
 </body>
 </html>

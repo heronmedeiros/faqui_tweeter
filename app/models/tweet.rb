@@ -1,6 +1,7 @@
 class Tweet < ActiveRecord::Base
   belongs_to :user
-  validates_presence_of :body
-  
+  validates :body, presence: true
+
   validates :body, length: { maximum: 140 }
+  default_scope -> { order(created_at: :desc) }
 end
