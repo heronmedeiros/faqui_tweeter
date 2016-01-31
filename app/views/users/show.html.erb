@@ -2,7 +2,9 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <span class="nick">
+    * <%= @user.name %>
+  </span>
 </p>
 
 <p>
@@ -10,5 +12,8 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+  <%= link_to 'Back', tweets_path, class: "btn btn-default" %>
+</div>

@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, html: {class: "form-group"}) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,15 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">@</span>
+
+    <%= f.text_field :name, class: "form-control",placeholder: "Username" %>
   </div>
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:  "btn btn-default"%>
   </div>
 <% end %>
