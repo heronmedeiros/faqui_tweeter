@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <%= image_tag("pirate_twitter.png", :alt => "fake", class: "logo") %>
+          <span>
+            Fake Twitter
+          </span>
+        </a>
+      </div>
+      <div class="new_tweet">
+        <%= link_to image_tag("new_tweet.png", class: "new_tweet_img"), new_tweet_path %>
+      </div>
+    </div>
+  </nav>
 
-<%= yield %>
-
+  <div id="main-container" class="container">
+    <div class="header clearfix">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
