@@ -1,16 +1,21 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Body:</strong>
-  <%= @tweet.body %>
+  <strong>
+    @<%= @tweet.user.name %>
+  </strong>
+  said:
+  <blockquote>
+    <%= @tweet.body %>
+  </blockquote>
 </p>
 
+<% if current_user.name == @tweet.user.name %>
 <p>
-  <strong>User:</strong>
-  <%= @tweet.user.name %>
+  <%= link_to t('tweets.show.delete'), @tweet, method: :delete, class: "btn", data: { confirm: t("tweets.show.confirm") } %>
 </p>
+<% end %>
+
 
 <div class="btn-group" role="group" aria-label="...">
-  <%= link_to 'Edit', edit_tweet_path(@tweet), class: "btn btn-default" %>
-  <%= link_to 'Back', tweets_path, class: "btn btn-default" %>
+  <%= link_to t('edit'), edit_tweet_path(@tweet), class: "btn btn-default" %>
+  <%= link_to t('back'), tweets_path, class: "btn btn-default" %>
 </div>

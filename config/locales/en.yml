@@ -20,4 +20,48 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  fake_title: 'Fake Twitter'
+  logout: 'Log out'
+  login: 'Log in'
+  signup: 'Sign up now!'
+  back: 'Back'
+  edit: 'Edit'
+  sessions:
+      create:
+          email_error: 'Invalid email and/or password'
+  tweets:
+      create:
+          correct_save: 'Tweet was successfully created.'
+          not_saved: 'prohibited this tweet from being saved:'
+          update_save: 'Tweet was successfully updated.'
+      update:
+          update_save: 'Tweet info updated.'
+      destroy:
+          correct_destroyed: 'Tweet was successfully destroyed.'
+      edit:
+        editing: 'Editing Tweet'
+      index:
+        all: 'All Tweets'
+      new:
+        compose: 'Compose a new Tweet'
+      show:
+        delete: 'delete?'
+        confirm: 'Are you sure?'
+
+  users:
+      create:
+          correct_save: 'User was successfully created.'
+          not_saved: 'prohibited this user from being saved:'
+          user_placeholder: 'Username'
+          update_save: 'User info updated.'
+      edit:
+        editing: 'Editing User'
+      update:
+        update_save: 'User was successfully updated.'
+      destroy:
+        correct_destroyed: 'User was successfully destroyed.'
+      login:
+        please: 'Please log in.'
+      new:
+        compose: 'Create your user'
+        new_question: 'New user?'

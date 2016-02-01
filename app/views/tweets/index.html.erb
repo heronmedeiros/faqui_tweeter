@@ -1,23 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%if notice %>
+<div class="alert alert-success" role="alert">
+  <p id="notice" class="alert"><%= notice %></p>
+</div>
 
-<h1>Listing Tweets</h1>
+<%end %>
+<h3>
+  <%= t('tweets.index.all')%>
+</h3>
 
 <table>
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= link_to tweet.body, tweet %></td>
-        <td><%= tweet.user.name %></td>
-        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> @<%= tweet.user.name %> said <%= link_to tweet.body, tweet %></td>
       </tr>
     <% end %>
   </tbody>

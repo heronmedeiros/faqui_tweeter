@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>FakeTwitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,28 +14,23 @@
         <a class="navbar-brand" href="/">
           <%= image_tag("pirate_twitter.png", :alt => "fake", class: "logo") %>
           <span>
-            Fake Twitter
+            <%= t 'fake_title' %>
           </span>
         </a>
       </div>
       <% if logged_in? %>
-        <div class="new_tweet">
+        <!-- <div class="nav navbar-right"> -->
           <%= link_to image_tag("new_tweet.png", class: "new_tweet_img"), new_tweet_path %>
-        </div>
-        <div><%= link_to "Log out", logout_path, method: "delete", class: "login" %></div>
+        <!-- </div> -->
+        <%= link_to t('logout'), logout_path, method: "delete", class: "navbar-text navbar-right log_out" %>
       <% else %>
-          <div><%= link_to "Log in", login_path, class: "login" %></div>
+          <%= link_to t('login'), login_path, class: "navbar-text navbar-right", id: "log_in" %>
       <% end %>
     </div>
   </nav>
 
   <div id="main-container" class="container">
-    <!-- <div class="header clearfix"> -->
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-    <% end -%>
-      <%= yield %>
-    <!-- </div> -->
+    <%= yield %>
   </div>
 </body>
 </html>

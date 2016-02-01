@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to user
     else
-      flash.now[:danger] = 'Invalid email and/or password'
+      flash.now[:danger] = t('sessions.create.email_error')
       render 'new'
     end
   end
