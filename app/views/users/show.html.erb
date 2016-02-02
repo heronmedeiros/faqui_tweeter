@@ -17,5 +17,5 @@
 <%= render "tweets/tweets",:locals => { :tweets => @user.tweets } %>
 
 <div class="btn-group" role="group" aria-label="...">
-  <%= link_to 'Back', home_path, class: "btn btn-default back" %>
+  <%= link_to t('back'), home_path, class: "btn btn-default back" %>
 </div>

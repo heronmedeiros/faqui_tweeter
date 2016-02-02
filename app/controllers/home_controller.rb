@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @tweets = current_user.my_feed
+    if logged_in?
+      @tweets = current_user.my_feed
+    else
+      redirect_to :root
+    end
   end
 end
