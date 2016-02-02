@@ -1,28 +1,21 @@
-== README
+## O usuário logado
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Criar postagens     - ok
+2. Seguir outro usuário - ok
+3. Ter home personalizada onde exibe só as postagens de quem ele segue - OK
+4. Buscar por outros usuários - NOP
+5. Visualizar o perfil de outros usuários, esse perfil deve mostrar somente postagems feita por esse usuário - OK
 
-Things you may want to cover:
+## O usuário não logado
 
-* Ruby version
+1. Se cadastrar no site          - ok
+1.1 Criar usuario                - ok
+	1.1.1 password               - ok
+2. Realizar o login(email/senha) - ok
+3. Recuperar senha               - NOPS
+4. Visualizar home que exibe todas as postagems de todos os outros usuários cadastrados - ok
+5. Realiza Login via Oauth com Facebook - NOPS
 
-* System dependencies
+BONUS!!!!:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### A home page devem ser *atualizadas dinamicamente*, ou seja se eu sigo usuário X a postagem dele deve aparecer na minha home automaticamente
