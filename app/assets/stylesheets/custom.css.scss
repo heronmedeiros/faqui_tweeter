@@ -22,8 +22,12 @@
 }
 .log_out, #log_in {
   margin-right: 12px;
+  float: right;
 }
 
+.navbar-header{
+   float: left;
+}
 .navbar-header .navbar-brand {
   white-space: nowrap;
 }

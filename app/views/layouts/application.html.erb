@@ -22,14 +22,16 @@
           </span>
         </a>
       </div>
+      <div class="nav navbar-right">
       <% if logged_in? %>
-        <!-- <div class="nav navbar-right"> -->
+
           <%= link_to image_tag("new_tweet.png", class: "new_tweet_img"), new_tweet_path %>
-        <!-- </div> -->
+
         <%= link_to t('logout'), logout_path, method: "delete", class: "navbar-text navbar-right log_out" %>
       <% else %>
           <%= link_to t('login'), login_path, class: "navbar-text navbar-right", id: "log_in" %>
       <% end %>
+      </div>
     </div>
   </nav>
 
