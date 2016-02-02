@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/heronmedeiros/faqui_tweeter.svg?branch=master)](https://travis-ci.org/heronmedeiros/faqui_tweeter)
+{<img src="https://travis-ci.org/heronmedeiros/faqui_tweeter.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/heronmedeiros/faqui_tweeter]
 
 
 ## O usuário logado
