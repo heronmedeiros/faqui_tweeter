@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
       redirect_to home_url
     else
       flash.now[:danger] = t('sessions.create.email_error')
-      render 'new'
+
+      render 'new', notice: t('sessions.create.email_error')
     end
   end
 
@@ -16,8 +17,8 @@ class SessionsController < ApplicationController
     end
   end
 
-def destroy
-  log_out
-  redirect_to root_url
- end
+  def destroy
+    log_out
+    redirect_to root_url
+  end
 end

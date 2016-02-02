@@ -50,11 +50,15 @@ class User < ActiveRecord::Base
     following.include? other
   end
 
-
   def my_feed
-    me = self
-    id = me.id
-    fids = me.following_ids
-    Tweet.where("user_id IN (?) OR user_id = ?", fids, id)
+    Tweet.where("user_id IN (?) OR user_id = ?", self.following_ids, self.id)
+  end
+
+  def followers_feed
+    Tweet.where("user_id IN (?)", self.follower_ids)
+  end
+
+  def folloing_feed
+    Tweet.where("user_id IN (?)", self.following_ids)
   end
 end

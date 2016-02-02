@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <%if logged_in? %>
@@ -25,7 +25,7 @@
       <div class="nav navbar-right">
       <% if logged_in? %>
 
-          <%= link_to image_tag("new_tweet.png", class: "new_tweet_img"), new_tweet_path %>
+        <%= link_to image_tag("new_tweet.png", class: "new_tweet_img"), new_tweet_path %>
 
         <%= link_to t('logout'), logout_path, method: "delete", class: "navbar-text navbar-right log_out" %>
       <% else %>

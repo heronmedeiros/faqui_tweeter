@@ -50,14 +50,14 @@ class UsersController < ApplicationController
   def following
     @user  = User.find(params[:id])
     @users = @user.following(params[:page])
-    # @tweets = @user.tweets
+    @tweets = @user.folloing_feed
     render 'follow'
   end
 
   def followers
     @user  = User.find(params[:id])
     @users = @user.followers(params[:page])
-    # @tweets = @user.tweets
+    @tweets = @user.followers_feed
     render 'follow'
   end
 

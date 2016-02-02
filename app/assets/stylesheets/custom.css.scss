@@ -39,6 +39,7 @@ body {
 .container {
   width: 370px;
   background-color: rgb(209, 222, 245);
+  margin-top: 60px;
 }
 
 .hr {
@@ -49,6 +50,7 @@ body {
 
 .hr h4 {
   color: rgb(52, 87, 151);
+
 }
 
 .back {
@@ -71,4 +73,23 @@ body {
 
 .clear {
   clear: both;
+  margin-top: 15px;
+}
+
+.bottom{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.top {
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.bigger_image {
+  width: 150px;
+}
+
+.big_margin{
+  margin-top: 62px;
 }

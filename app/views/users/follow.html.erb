@@ -4,12 +4,5 @@
 
   Tweets:</b> <%= @user.tweets.count %>
 
-<% if @user.tweets.last %>
-  <h4>
-    Last Tweet
-  </h4>
-  <blockquote>
-     <%= @user.tweets.last.body %>
-  </blockquote>
-<% end %>
+  <%= render "tweets/tweets"%>
 </section>

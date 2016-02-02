@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   it { should have_many(:tweets) }
+  it { should have_many(:followers) }
+  it { should have_many(:following) }
 
   context "validations" do
-
     it { should validate_length_of(:name).is_at_most(40) }
     it { should validate_length_of(:email).is_at_most(255) }
     it { should validate_uniqueness_of(:email).on(:create) }
@@ -41,7 +42,38 @@ RSpec.describe User, type: :model do
         expect(user.valid?).to be_falsy
         expect(user.errors[:name]).to eq(["is too long (maximum is 40 characters)"])
       end
-
     end
+  end
+  context "follow" do
+    let (:john) { User.create!(
+                    name:                  "John",
+                    email:                 "johnemail@email.com",
+                    password:              "pa$$$$ap",
+                    password_confirmation: "pa$$$$ap")
+                }
+    let (:lee) { User.create!(
+                    name:                  "Lee",
+                    email:                 "lee@email.com",
+                    password:              "pa$$$$ap",
+                    password_confirmation: "pa$$$$ap")
+                }
+    it "should not follow an user" do
+      expect(lee.following?(lee)).to be_falsy
+    end
+
+    it "should not be follower of an user" do
+      expect(lee.following?(john)).to be_falsy
+    end
+
+    it "should follow an user" do
+      john.follow(lee)
+      expect(john.following?(lee)).to be_truthy
+    end
+
+    it "should be follower of an user" do
+      john.follow(lee)
+      expect(lee.followers.include?(john)).to be_truthy
+    end
+
   end
 end

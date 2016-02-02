@@ -1,14 +1,11 @@
 <%= form_for(@tweet, html: {class: "form-group"} ) do |f| %>
   <% if @tweet.errors.any? %>
-    <div id="error_explanation" class="alert alert-danger">
-      <%= pluralize(@tweet.errors.count, "error") %> <%= t 'tweets.create.not_saved'%>
-
-      <ul>
+    <%= content_tag(:div, class: "alert alert-danger alert-dismissable") do %>
       <% @tweet.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <%= message %>
       <% end %>
-      </ul>
-    </div>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+    <% end %>
   <% end %>
 
   <div class="form-group">

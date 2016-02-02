@@ -1,22 +1,11 @@
-<p>
-  <strong>
-    @<%= link_to @tweet.user.name, @tweet.user%>
+<div class="clear" />
 
-  </strong>
-    <%=t('tweets.show.once')%>:
-  <blockquote>
-    <%= @tweet.body %>
-  </blockquote>
-</p>
+<%= render "tweet"%>
 
-<% if current_user.name == @tweet.user.name %>
-<p>
-  <%= link_to t('tweets.show.delete'), @tweet, method: :delete, class: "btn", data: { confirm: t("tweets.show.confirm") } %>
-</p>
-<% end %>
+<div class="btn-group bottom" role="group" aria-label="...">
+  <% if @tweet.user == current_user %>
+    <%= link_to t('edit'), edit_tweet_path(@tweet), class: "btn btn-default" %>
+  <% end%>
 
-
-<div class="btn-group" role="group" aria-label="...">
-  <%= link_to t('edit'), edit_tweet_path(@tweet), class: "btn btn-default" %>
   <%= link_to t('back'), tweets_path, class: "btn btn-default" %>
 </div>

@@ -13,6 +13,9 @@ class TweetsController < ApplicationController
   end
 
   def edit
+    unless @tweet.user == current_user
+      redirect_to @tweet
+    end
   end
 
   def create
