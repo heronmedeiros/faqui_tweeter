@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/heronmedeiros/faqui_tweeter.svg?branch=master)](https://travis-ci.org/heronmedeiros/faqui_tweeter)
+
+
 ## O usuário logado
 
 1. Criar postagens     - ok
