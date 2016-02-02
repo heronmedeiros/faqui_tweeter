@@ -21,7 +21,7 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to tweets_url, notice: t('tweets.create.correct_save') }
+        format.html { redirect_to home_url, notice: t('tweets.create.correct_save') }
       else
         format.html { render :new }
       end

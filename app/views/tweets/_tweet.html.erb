@@ -1,0 +1,16 @@
+<div class="clear" />
+
+<% @tweets.each do |tweet| %>
+  <div class="media hr">
+    <div class="media-left">
+      <%= link_to image_tag("/images/#{tweet.user.id}.jpg", class: "media-object"), tweet.user %>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">
+        @<%= link_to tweet.user.name, tweet.user%>
+
+      </h4>
+        <%= tweet.body %>
+    </div>
+  </div>
+<% end %>

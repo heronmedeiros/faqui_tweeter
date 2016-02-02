@@ -1,0 +1,21 @@
+<% @user ||= current_user %>
+<strong>
+  @<%= current_user.name if current_user%>
+</strong>
+<div class="">
+  <a href="<%= following_user_path(@user) %>">
+    <strong id="following" class="stat">
+      <%= @user.following.count %>
+    </strong>
+    <%= t('following')%>
+  </a>
+  |
+  <a href="<%= followers_user_path(@user) %>">
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    <%= t('followers')%>
+  </a>
+  |
+  <%= link_to t('tweets.index.all'), root_url %>
+</div>

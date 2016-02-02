@@ -1,8 +1,9 @@
 <p>
   <strong>
-    @<%= @tweet.user.name %>
+    @<%= link_to @tweet.user.name, @tweet.user%>
+
   </strong>
-  said:
+    <%=t('tweets.show.once')%>:
   <blockquote>
     <%= @tweet.body %>
   </blockquote>

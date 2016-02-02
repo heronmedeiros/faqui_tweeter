@@ -26,6 +26,8 @@ en:
   signup: 'Sign up now!'
   back: 'Back'
   edit: 'Edit'
+  following: 'following'
+  followers: 'followers'
   sessions:
       create:
           email_error: 'Invalid email and/or password'
@@ -47,6 +49,7 @@ en:
       show:
         delete: 'delete?'
         confirm: 'Are you sure?'
+        once: 'once said '
 
   users:
       create:
@@ -65,3 +68,5 @@ en:
       new:
         compose: 'Create your user'
         new_question: 'New user?'
+      show:
+        since: 'user since'

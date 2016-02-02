@@ -1,0 +1,16 @@
+<%if notice %>
+  <div class="alert alert-success" role="alert">
+    <p id="notice" class="alert"><%= notice %></p>
+  </div>
+<%end %>
+
+
+<section class="stats">
+  <%= render 'commom/relationship_numbers' %>
+</section>
+
+<h3>
+  <%= t('tweets.index.all')%>
+</h3>
+
+<%= render "tweets/tweet" %>

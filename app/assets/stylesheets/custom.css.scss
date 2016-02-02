@@ -1,10 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-div {
-  // border: 1px solid green;
-}
-
 .logo, .new_tweet_img{
   font-size: 25px;
   width:  40px;
@@ -32,18 +28,43 @@ div {
   white-space: nowrap;
 }
 
-.container {
-  width: 370px;
+body {
+  background-color: rgb(159, 183, 226);
 }
 
+.container {
+  width: 370px;
+  background-color: rgb(209, 222, 245);
+}
+
+.hr {
+  -webkit-box-shadow: 7px 4px 55px -13px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 4px 55px -13px rgba(0,0,0,0.75);
+  box-shadow: 7px 4px 55px -13px rgba(0,0,0,0.75);
+}
+
+.hr h4 {
+  color: rgb(52, 87, 151);
+}
+
+.back {
+  margin-top: 6px;
+}
 
 @media screen and (min-width: 900px) {
   .container {
-    width: 370px;
+    width: 900px;
   }
 }
 
-.nick{
-  font-family: "Gotham Narrow";
+.nick {
+  font-family: "Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif";
   font-size: 1.4em;
+  float: left;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+
+.clear {
+  clear: both;
 }

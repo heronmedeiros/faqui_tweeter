@@ -2,11 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user,      only: [:show, :edit, :update, :destroy]
 
   def index
-    redirect_to :root
+    redirect_to home_url
   end
 
   def show
-    redirect_to :root
+    @user = User.find(params[:id])
+    @tweets = @user.tweets
   end
 
   def new
@@ -43,8 +44,21 @@ class UsersController < ApplicationController
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: t('users.destroy.correct_destroyed') }
-      format.json { head :no_content }
     end
+  end
+
+  def following
+    @user  = User.find(params[:id])
+    @users = @user.following(params[:page])
+    # @tweets = @user.tweets
+    render 'follow'
+  end
+
+  def followers
+    @user  = User.find(params[:id])
+    @users = @user.followers(params[:page])
+    # @tweets = @user.tweets
+    render 'follow'
   end
 
   private

@@ -1,0 +1,23 @@
+<%if notice %>
+  <div class="alert alert-success" role="alert">
+    <p id="notice" class="alert"><%= notice %></p>
+  </div>
+<%end %>
+
+
+<p>
+  <span class="nick">
+    @<%= @user.name %>
+  </span>
+  <span class="since clear">
+    <%=t('users.show.since')%>
+    <%= time_ago_in_words(@user.created_at) %>
+  </span>
+
+</p>
+<%= render 'follow' if logged_in? %>
+<%= render 'tweets/tweet' %>
+
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to 'Back', home_path, class: "btn btn-default back" %>
+</div>

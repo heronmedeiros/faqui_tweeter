@@ -8,13 +8,4 @@
   <%= t('tweets.index.all')%>
 </h3>
 
-<table>
-
-  <tbody>
-    <% @tweets.each do |tweet| %>
-      <tr>
-        <td> @<%= tweet.user.name %> said <%= link_to tweet.body, tweet %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render "tweet" %>
