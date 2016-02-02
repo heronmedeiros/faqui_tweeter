@@ -26,12 +26,7 @@ RSpec.describe User, type: :model do
     end
 
     context "when fiels are not empty" do
-      let (:user) { User.new(
-                      name:                  "John Lee",
-                      email:                 "johnlee@email.com",
-                      password:              "pa$$$$ap",
-                      password_confirmation: "pa$$$$ap")
-                  }
+      let (:user) { create(:user) }
 
       it "should save" do
         expect(user.save).to be_truthy
@@ -45,18 +40,8 @@ RSpec.describe User, type: :model do
     end
   end
   context "follow" do
-    let (:john) { User.create!(
-                    name:                  "John",
-                    email:                 "johnemail@email.com",
-                    password:              "pa$$$$ap",
-                    password_confirmation: "pa$$$$ap")
-                }
-    let (:lee) { User.create!(
-                    name:                  "Lee",
-                    email:                 "lee@email.com",
-                    password:              "pa$$$$ap",
-                    password_confirmation: "pa$$$$ap")
-                }
+    let (:john) { create(:user)  }
+    let (:lee) { create(:user, name:   "Lee", email:  "lee@email.com") }
     it "should not follow an user" do
       expect(lee.following?(lee)).to be_falsy
     end

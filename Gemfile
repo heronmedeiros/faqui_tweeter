@@ -44,9 +44,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'pry-rails'
   gem 'shoulda-matchers', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 gem 'bootstrap-sass'
 gem 'bcrypt'
 
 gem 'faker'
+gem 'omniauth-facebook', '2.0.0'
